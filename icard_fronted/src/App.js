@@ -1,11 +1,12 @@
 import React from 'react'
-import { Button } from 'semantic-ui-react'
+import "./App.scss";
+import  Navigation from './routes/Navigation';
 
 export default function App() {
   return (
     <div>
-      <Button primary>Primary</Button>
-      <Button secondary>Secondary</Button>
+      <h1>Hola</h1>
+      <Navigation/>
     </div>
   )
 }
