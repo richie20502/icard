@@ -4,7 +4,6 @@ import routes from "./routes";
 import {map} from "lodash";
 
 export function Navigation() {
-    //console.log(routes);
     return (
         <BrowserRouter>
             <Routes>
