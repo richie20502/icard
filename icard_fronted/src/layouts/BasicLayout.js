@@ -9,5 +9,5 @@ export  function BasicLayout(props) {
         </p>
         {children}
     </div>
-  )
+    )
 }
