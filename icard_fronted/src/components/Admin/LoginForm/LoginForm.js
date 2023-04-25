@@ -4,6 +4,7 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import {loginApi} from "../../../api/user";
 import './LoginForm.scss';
+import { toast } from 'react-toastify';
 
 export function LoginForm() {
     const formik = useFormik({
@@ -15,8 +16,7 @@ export function LoginForm() {
                 const {access} = response;
                 console.log(access);
             } catch (error) {
-                console.log('ERROR');
-                console.log(error);
+                toast.error(error.message);
             }
         }
     });
