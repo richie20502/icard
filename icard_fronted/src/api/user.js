@@ -2,7 +2,7 @@ import {BASE_API} from '../utils/constants';
 
 export async function loginApi(formValue){
     try {
-        const url = `${BASE_API}/auth/login`
+        const url = `${BASE_API}/api/auth/login/`
         const params = {
             method: "POST",
             headers: {
@@ -19,7 +19,7 @@ export async function loginApi(formValue){
 
         const result = await response.json();
         return result;
-        
+
     } catch (error) {
         throw error
     }
