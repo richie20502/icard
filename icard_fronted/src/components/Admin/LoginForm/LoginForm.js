@@ -5,8 +5,10 @@ import * as Yup from "yup";
 import {loginApi} from "../../../api/user";
 import './LoginForm.scss';
 import { toast } from 'react-toastify';
+import { useAuth } from '../../../hooks';
 
 export function LoginForm() {
+    console.log(useAuth());
     const formik = useFormik({
         initialValues: initialValues(),
         validationSchema: Yup.object(validationSchema()),
