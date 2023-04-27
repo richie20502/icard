@@ -22,7 +22,6 @@ export function AuthProvaider(props) {
                     token,
                     me
                 });
-                console.log(me);
             }else{
                 setAuth(null);
             }

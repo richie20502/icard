@@ -2,6 +2,7 @@ import React from 'react';
 import "./SiderMenu.scss";
 import {Menu, Icon} from "semantic-ui-react";
 import {Link, useLocation} from "react-router-dom";
+import {useAuth} from "../../../hooks";
 
 export function SiderMenu(props) {
     const { children } = props;
@@ -18,6 +19,7 @@ export function SiderMenu(props) {
 
 function MenuLeft(props){
     const {pathname} = props;
+    const { auth } = useAuth();
     return (
         <Menu fixed='left' borderless className="side" vertical>
             <Menu.Item as={Link} to={"/admin"} active={pathname === "/admin"}>
@@ -40,9 +42,11 @@ function MenuLeft(props){
                 <Icon name="cart"/> Productos
             </Menu.Item>
 
-            <Menu.Item as={Link} to={"/admin/users"} active={pathname === "/admin/users"}>
-                <Icon name="users"/> Usuarios
-            </Menu.Item>
+            {auth.me?.is_staff && (
+                <Menu.Item as={Link} to={"/admin/users"} active={pathname === "/admin/users"}>
+                    <Icon name="users"/> Usuarios
+                </Menu.Item>
+            )}
         </Menu>
     );
 }
