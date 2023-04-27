@@ -12,7 +12,7 @@ export function UserAdmin() {
     },[]);
     return (
         <div>
-            <HeaPage title="Usuarios" /*btnTitle="Nuevo Usuario" btnTitleTwo="Eliminar Usuario"*/ />
+            <HeaPage title="Usuarios" btnTitle="Nuevo Usuario" /*btnTitleTwo="Eliminar Usuario"*/ />
             {
                 loading ? (
                     <Loader active inline="centered">
