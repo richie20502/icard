@@ -16,36 +16,51 @@ export function AddEditUserForm() {
   }); 
   return (
     <Form className='add-edit-user-form' 
-      >
+     onSubmit={formik.handleSubmit}  >
         <Form.Input 
-          name="username"
-          placeholder="Nombre de usuario" />
-
+          name="username" 
+          placeholder="Nombre de usuario"
+          value={formik.values.username}
+          onChange={formik.handleChange} 
+          error= {formik.errors.username} />
+ 
         <Form.Input 
-          name="email"
-          placeholder="Correro Electronico" />
-
+          name="email" 
+          placeholder="Correro Electronico"
+          value={formik.values.email}
+          onChange={formik.handleChange} 
+          error= {formik.errors.email} />
+ 
         <Form.Input 
           name="first_name" 
-          placeholder="Nombre" />
-
+          placeholder="Nombre"
+          value={formik.values.first_name}
+          onChange={formik.handleChange} 
+          error= {formik.errors.first_name} />
+ 
         <Form.Input 
           name="last_name" 
-          placeholder="Apellidos"/>
-
+          placeholder="Apellidos"
+          value={formik.values.last_name}
+          onChange={formik.handleChange} 
+          error= {formik.errors.last_name} />
+ 
         <Form.Input 
           name="password" 
           type="password" 
-          placeholder="Contraseña"/>
-
+          placeholder="Contraseña"
+          value={formik.values.password}
+          onChange={formik.handleChange} 
+          error= {formik.errors.password} />
+ 
         <div className='add-edit-user-form__active'>
             <Checkbox toggle /> Usuario activo
         </div>
-
+ 
         <div className='add-edit-user-form__staff'>
             <Checkbox toggle /> Usuario Administrador
         </div>
-
+ 
         <Button type='submit' primary fluid content="Crear"/>
     </Form>
   );
