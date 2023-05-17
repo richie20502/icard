@@ -5,8 +5,15 @@ import * as Yup from 'yup';
 import "./AddEditUserForm.scss";
 
 export function AddEditUserForm() {
-  const formik = useFormik({  
-  });
+  const formik = useFormik({
+    initialValues: initialValues(),
+    validationSchema: Yup.object(newSchame()), 
+    validateOnChange: false,
+    onSubmit: (formValue) => {
+      console.log("Formulario Enviado");
+      console.log(formValue);
+    }
+  }); 
   return (
     <Form className='add-edit-user-form' 
       >
