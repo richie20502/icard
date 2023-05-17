@@ -1,20 +1,21 @@
 import React from 'react';
 import { Form, Button, Checkbox } from 'semantic-ui-react';
-import { useFormik } from 'formik';
+import { useFormik } from "formik";
 import * as Yup from 'yup'; 
-import "./AddEditUserForm";
 import "./AddEditUserForm.scss";
 
-export function AddEditUserForm() {  
+export function AddEditUserForm() {
+  const formik = useFormik({  
+  });
   return (
     <Form className='add-edit-user-form' 
       >
         <Form.Input 
-          name="username" 
+          name="username"
           placeholder="Nombre de usuario" />
 
         <Form.Input 
-          name="email" 
+          name="email"
           placeholder="Correro Electronico" />
 
         <Form.Input 
